@@ -98,3 +98,12 @@ div p {
 #message {
   margin-bottom: 8px;
 }
+
+#notations {
+  font-size: 3em;
+  line-height: 1;
+  margin: 1rem;
+  position: absolute;
+  right: 0;
+  width: 1em;
+}
