@@ -109,7 +109,7 @@
     view.menu.classList.remove("show")
     view.notations.classList.add("hide")
     
-    if (territoryNumber === "18") {
+    if (/^(16|19|28)$/.test(territoryNumber)) {
       warnUser("Este território possui endereços que não devem ser visitados. Contate o dirigente de campo ou o servo de territórios.")
       view.notations.classList.remove("hide")
     }
