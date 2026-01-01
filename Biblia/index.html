@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leitura da Bíblia</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #e4ecf4);
+      color: #333;
+    }
+
+    #titulo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    audio {
+      width: 90%;
+      max-width: 400px;
+      outline: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="titulo"></div>
+  <audio id="audio" controls></audio>
+  <script>
+    const procura = {
+      '01-01': 'Marcos_1-3',
+      '01-02': 'Marcos_4-5',
+      '01-03': 'Marcos_6-8',
+    }
+    const hoje = new Date().toLocaleDateString('en', { month: '2-digit', day: '2-digit' }).replace('/', '-')
+    const leitura = procura[hoje]
+    const textoTitulo = leitura.replace('_', ' ')
+
+    audio.src = `${hoje}_${leitura}.mp3`
+    titulo.textContent = textoTitulo
+  </script>
+</body>
+</html>
